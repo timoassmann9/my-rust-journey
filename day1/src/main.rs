@@ -30,4 +30,15 @@ fn main() {
         let fahrenheit = celsius_to_fahrenheit(value);
         println!("{value:<2}° Celsius ({fahrenheit:.2}° Fahrenheit) feels {}", classify(fahrenheit));
     }
+
+    // exercise 3
+    for i in 1..=30 {
+        let result = match (i % 3, i % 5) {
+            (0, 0) => String::from("FizzBuzz"),
+            (0, _) => String::from("Fizz"),
+            (_, 0) => String::from("Buzz"),
+            _ => i.to_string(),
+        };
+        println!("{result}");
+    }
 }
