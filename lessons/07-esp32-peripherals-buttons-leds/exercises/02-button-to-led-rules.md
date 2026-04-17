@@ -1,16 +1,23 @@
 # Exercise 02: Button to LED Rules
 
-Extend `Controller` with one more behavior rule:
+## Objective
 
-- a `Released` event should not toggle the LED
-- two accepted `Pressed` events should toggle the LED twice
+Extend a controller without turning it into a mess of conditionals.
 
-Then add another requirement:
+## Task
 
-- track how many valid presses have been seen
+Create or extend a `Controller` type so that:
 
-What this trains:
+- `Released` does not toggle the LED
+- each accepted `Pressed` event toggles the LED once
+- the controller also counts valid presses
 
-- stateful logic
-- event handling
-- adding behavior without losing clarity
+## Constraints
+
+- keep the behavior in methods on the controller
+- print the controller state after a short simulated event sequence
+
+## Why this exercise exists
+
+This exercise is a small example of event-driven logic with state, which is the
+core of many device controllers.

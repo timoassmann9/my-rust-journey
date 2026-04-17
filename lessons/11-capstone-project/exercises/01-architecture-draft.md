@@ -1,16 +1,20 @@
 # Exercise 01: Architecture Draft
 
-Create a design draft for the full project.
+## Objective
 
-At minimum, define:
+Turn all the earlier lessons into a concrete design before diving into full implementation.
+
+## Task
+
+Create a design draft that defines:
 
 - the main state struct or structs
-- the main enums for events or commands
-- the boundaries between hardware logic and protocol logic
+- the main enums for events and commands
+- the boundary between hardware logic and protocol logic
 
-Write this as Rust types, pseudocode, or a mix of both.
+You can write this as Rust types, pseudocode, or both.
 
-What this trains:
+## Why this exercise exists
 
-- pulling multiple lessons together
-- making decisions before coding blindly
+Strong architecture decisions save time later, especially in embedded work where
+debugging is slower.

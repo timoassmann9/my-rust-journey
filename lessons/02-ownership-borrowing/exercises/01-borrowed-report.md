@@ -1,21 +1,35 @@
 # Exercise 01: Borrowed Report
 
-Write a function:
+## Objective
 
-`fn make_report(device_name: &str, readings: &[i32]) -> String`
+Practice designing a function that reads borrowed data and returns newly created
+owned output.
 
-It should return a string like:
+## Task
+
+Write:
+
+```rust
+fn make_report(device_name: &str, readings: &[i32]) -> String
+```
+
+Expected output style:
 
 `device=esp32-a, count=4, high=true`
 
-Rules:
+## Constraints
 
-- do not take ownership of the device name
-- do not take ownership of the readings vector
+- do not take ownership of `device_name`
+- do not take ownership of the readings collection
 - `high=true` means at least one reading is greater than `70`
 
-What this trains:
+## Hints
 
-- borrowed string slices
-- borrowed slices
-- returning owned output from borrowed input
+- use `readings.len()` for the count
+- a simple loop with a boolean flag is fine here
+- the report itself should be a fresh `String`
+
+## Why this exercise exists
+
+This pattern is everywhere in Rust: borrowed input, owned output. It is common
+in formatting, logging, and protocol encoding.

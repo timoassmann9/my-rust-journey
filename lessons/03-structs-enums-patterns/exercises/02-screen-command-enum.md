@@ -1,28 +1,36 @@
 # Exercise 02: Screen Command Enum
 
-Create an enum:
+## Objective
+
+Use a data-carrying enum to represent screen actions explicitly.
+
+## Task
+
+Create:
 
 - `Clear`
 - `WriteLine(String)`
 - `SetBrightness(u8)`
 
-Then write a function:
+Then write:
 
-`fn command_name(command: &ScreenCommand) -> &'static str`
+```rust
+fn command_name(command: &ScreenCommand) -> &'static str
+```
 
-Return only the variant name, not its data.
+Return only the variant name.
 
-Example:
+## Constraints
 
-- `WriteLine("Hi".to_string())` becomes `"WriteLine"`
+- match on a borrowed command
+- do not allocate for `command_name`
+- if you do the stretch goal, keep it as a second function
 
-Stretch goal:
+## Stretch goal
 
-- write a second function that turns the whole command into a human-readable
-  string
+Write a human-readable formatter for the full command, including any stored data.
 
-What this trains:
+## Why this exercise exists
 
-- data-carrying enums
-- matching on borrowed enum values
-- separating control flow from stored data
+Embedded projects often act on commands. Enums let you model those commands
+without magic strings spread all over the program.

@@ -1,18 +1,23 @@
 # Lesson 07: ESP32 Peripherals, Buttons, and LEDs
 
-## Goal
+## Learning goal
 
-Model the simplest real interactions in your project: reading a button and
-driving an LED.
+Model the smallest useful hardware interaction in your project: a button affects
+an LED.
 
-## Why this matters for your project
+## Why this matters for the ESP32 project
 
-Buttons and LEDs are the smallest useful hardware feedback loop. Once you can
-reason about that loop clearly, larger features become easier.
+This is the first place where device input and output meet. If you can structure
+button handling clearly, the rest of the project becomes easier to design.
 
-## Focus topics
+## Key concepts
 
-- input versus output pins
-- debouncing as a concept
-- mapping events to actions
-- avoiding fragile global state
+- input versus output responsibilities
+- edge cases like button bounce
+- event handling
+- keeping control logic in a dedicated type
+
+## Practical rule
+
+Do not let raw button reads control the whole program directly. Route them
+through a small controller or state type first.

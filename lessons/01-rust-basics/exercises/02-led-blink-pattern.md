@@ -1,7 +1,18 @@
 # Exercise 02: LED Blink Pattern
 
-Add a function named `blink_pattern` that converts a list of booleans into a
-compact string:
+## Objective
+
+Translate internal program state into a compact, human-readable output format.
+
+## Task
+
+Write a function:
+
+```rust
+fn blink_pattern(states: Vec<bool>) -> String
+```
+
+Rules:
 
 - `true` becomes `*`
 - `false` becomes `.`
@@ -9,17 +20,27 @@ compact string:
 Example:
 
 - input: `vec![true, false, true, true]`
-- output: `"* . **"` is not allowed
-- output should be `"*.**"`
+- output: `"*.**"`
 
-Then print the pattern for at least two different sequences in `main`.
+Then print the pattern for at least two different input sequences.
 
-Stretch requirement:
+## Constraints
 
-- also print how many times the LED was on
+- build the string character by character
+- avoid spaces in the output
+- keep the function focused on conversion only
 
-What this trains:
+## Hints
 
-- iterating over vectors
-- string building
-- turning state into a simple display format
+- start with `String::new()`
+- use `push` to add single characters
+- if you want the stretch goal, write a second function instead of overloading the first one
+
+## Stretch goal
+
+Write `count_on(states: &[bool]) -> usize` and print the number of active LED states.
+
+## Why this exercise exists
+
+Embedded programs often turn internal state into short status displays, log
+messages, or protocol messages. This is a small version of that skill.

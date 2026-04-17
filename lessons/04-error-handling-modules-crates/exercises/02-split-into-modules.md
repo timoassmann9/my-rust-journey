@@ -1,18 +1,27 @@
 # Exercise 02: Split Into Modules
 
-Imagine this lesson is growing into a real project.
+## Objective
 
-Refactor the code mentally or in files so that:
+Practice organizing code before the project becomes difficult to navigate.
+
+## Task
+
+Refactor your lesson project so that:
 
 - parsing functions live in a `config` module
 - the error enum lives in an `error` module
-- `main` or a top-level entrypoint imports what it needs
+- `main` imports what it needs
 
-You do not need a perfect Cargo layout here. The point is to practice how Rust
-code is organized.
+You do not need a perfect production layout. The goal is to make the code easier
+to read and easier to grow.
 
-What this trains:
+## Hints
 
-- separating responsibilities
-- using modules to reduce chaos
-- thinking ahead before the project gets large
+- start small; two modules are enough
+- move types before moving helper functions
+- after the split, ask whether each file has one clear responsibility
+
+## Why this exercise exists
+
+Many beginner Rust projects become hard to read because every new idea lands in
+one file. This exercise tries to break that habit early.

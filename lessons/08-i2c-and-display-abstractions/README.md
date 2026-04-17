@@ -1,18 +1,19 @@
 # Lesson 08: I2C and Display Abstractions
 
-## Goal
+## Learning goal
 
-Learn how to represent a screen and its commands without binding yourself too
-early to one exact hardware library.
+Represent screen behavior in a way that keeps your application logic separate
+from hardware transport details.
 
-## Why this matters for your project
+## Why this matters for the ESP32 project
 
-I2C displays are a good example of why abstraction matters. Your app logic
-should express what to show, while a lower layer handles how bytes get sent.
+Your app should decide what to show. A lower layer should decide how that gets
+sent over I2C. If those concerns are mixed together, changing the display code
+becomes harder than necessary.
 
-## Focus topics
+## Key concepts
 
-- command-oriented design
-- buffer building
-- separating application logic from transport details
-- simple traits as abstraction boundaries
+- trait-based abstraction
+- command-oriented rendering
+- fake or test displays for logic development
+- separating display content from device transport

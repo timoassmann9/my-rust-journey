@@ -1,22 +1,37 @@
 # Exercise 01: Parse Port
 
-Write a function:
+## Objective
 
-`fn parse_port(raw: &str) -> Result<u16, ConfigError>`
+Practice turning raw text into a validated value while preserving the reason for
+failure.
 
-Use this error enum:
+## Task
+
+Write:
+
+```rust
+fn parse_port(raw: &str) -> Result<u16, ConfigError>
+```
+
+Use an error enum with:
 
 - `MissingValue`
 - `InvalidNumber`
 - `OutOfRange`
 
-Rules:
+## Rules
 
 - empty input becomes `MissingValue`
 - non-numeric input becomes `InvalidNumber`
-- numeric input above `65535` becomes `OutOfRange`
+- numbers above `65535` become `OutOfRange`
 
-What this trains:
+## Hints
 
-- explicit failure cases
-- mapping parsing failures into your own error type
+- parse to a larger numeric type first
+- distinguish "not a number" from "valid number but too large"
+- keep the error names meaningful instead of generic
+
+## Why this exercise exists
+
+You are practicing an important embedded and networking skill: rejecting bad
+input without losing the reason it was rejected.

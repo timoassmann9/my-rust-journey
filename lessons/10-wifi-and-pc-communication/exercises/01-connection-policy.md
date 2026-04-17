@@ -1,16 +1,21 @@
 # Exercise 01: Connection Policy
 
-Design a simple policy for Wi-Fi reconnect attempts.
+## Objective
 
-Include answers for:
+Turn vague ideas about reconnecting into explicit system behavior.
 
-- how many times should the device retry
-- what should be shown on the display during retries
-- when should the system move into an error state
+## Task
 
-If you want to write code, add methods to `ConnectionState`.
+Design a reconnect policy that answers:
 
-What this trains:
+- how many retry attempts are allowed
+- what is shown on the display during retries
+- when the system enters an error state
 
-- system behavior design
-- turning vague ideas into explicit rules
+Optional code task:
+
+Add methods to a `ConnectionState` type.
+
+## Why this exercise exists
+
+Systems are easier to build when failure behavior is planned instead of improvised.

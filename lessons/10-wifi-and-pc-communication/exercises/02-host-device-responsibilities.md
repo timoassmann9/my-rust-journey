@@ -1,8 +1,12 @@
 # Exercise 02: Host and Device Responsibilities
 
-Split responsibilities between the ESP32 and the computer.
+## Objective
 
-Write a short design note that answers:
+Practice deciding where logic should live in a two-part system.
+
+## Task
+
+Write a short design note that explains:
 
 - what logic belongs on the ESP32
 - what logic belongs on the computer
@@ -11,9 +15,9 @@ Write a short design note that answers:
 
 Constraint:
 
-- keep the ESP32 side simpler than the computer side
+- keep the ESP32 side simpler than the host side
 
-What this trains:
+## Why this exercise exists
 
-- architecture thinking
-- avoiding overloaded embedded code
+Many first device projects overload the microcontroller with work that belongs on
+the computer. This exercise is meant to prevent that.

@@ -1,19 +1,27 @@
 # Exercise 02: State Machine Sketch
 
-Design an enum for the boot lifecycle of your ESP32 project.
+## Objective
 
-Include at least:
+Practice turning vague lifecycle ideas into an explicit state model.
+
+## Task
+
+Design an enum for the device lifecycle with at least:
 
 - `Booting`
 - `WaitingForWifi`
 - `Ready`
 - `Error`
 
-Then write a function or pseudocode transition table that explains how the
-device moves between these states.
+Then write a transition function or a short transition table.
 
-What this trains:
+## Hints
 
-- explicit state modeling
-- avoiding "random booleans everywhere"
-- making later code easier to test
+- ask what event moves the system from one state to another
+- do not try to model every possible detail yet
+- the important part is that the system has one main lifecycle state at a time
+
+## Why this exercise exists
+
+State machines make embedded code easier to reason about. They also stop you
+from replacing design with a pile of unrelated flags.

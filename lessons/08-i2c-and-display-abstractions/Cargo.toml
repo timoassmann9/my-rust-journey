@@ -1,6 +1,0 @@
-[package]
-name = "lesson-08-i2c-and-display-abstractions"
-version = "0.1.0"
-edition = "2024"
-
-[dependencies]

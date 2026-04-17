@@ -1,8 +1,12 @@
 # Exercise 02: Design a Display Trait
 
-Improve the display abstraction by adding one more capability.
+## Objective
 
-Pick one:
+Practice deciding what belongs in an abstraction boundary.
+
+## Task
+
+Add one new method to the display trait, such as:
 
 - `set_brightness`
 - `write_centered`
@@ -10,11 +14,11 @@ Pick one:
 
 Then explain:
 
-- why that method belongs in the trait
-- what application code should know about it
-- what application code should not know about the underlying I2C details
+- why the method belongs in the trait
+- what the application should know
+- what the application should not know about I2C internals
 
-What this trains:
+## Why this exercise exists
 
-- interface design
-- deciding what belongs in an abstraction boundary
+Good abstraction is not about hiding everything. It is about exposing the right
+things at the right level.

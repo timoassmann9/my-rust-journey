@@ -1,18 +1,22 @@
 # Lesson 10: Wi-Fi and PC Communication
 
-## Goal
+## Learning goal
 
-Connect the protocol thinking from the previous lesson to a realistic device and
-host architecture.
+Turn your message and state-design work into a simple device-host architecture.
 
-## Why this matters for your project
+## Why this matters for the ESP32 project
 
-Your ESP32 is only half the system. The other half is the computer receiving
-data or sending commands. Good boundaries matter more than any single library.
+The ESP32 is not the whole system. Your computer will either:
 
-## Focus topics
+- receive device events
+- send commands
+- or do both
+
+That means you need clear responsibilities and a clear connection policy.
+
+## Key concepts
 
 - connection lifecycle
-- sending versus receiving responsibilities
-- retry behavior
-- keeping protocol logic separate from transport code
+- retry rules
+- device-versus-host responsibilities
+- keeping transport code separate from protocol logic

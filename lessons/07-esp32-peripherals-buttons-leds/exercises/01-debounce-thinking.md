@@ -1,18 +1,27 @@
 # Exercise 01: Debounce Thinking
 
-Mechanical buttons can bounce. That means one physical press may look like
-several quick press/release events.
+## Objective
 
-Task:
+Deal with a real hardware problem instead of the idealized "one press equals one
+event" story.
 
-- explain in your own words why this is a problem
-- design a simple rule that ignores repeated press events that happen "too soon"
+## Task
 
-If you want to write code, create a function that receives a sequence of button
-events and outputs only the accepted presses.
+Do both of these:
 
-What this trains:
+- explain why button bounce causes incorrect behavior
+- design a simple debounce rule
 
-- hardware realism
-- filtering noisy input
-- thinking beyond the ideal case
+Optional code task:
+
+Write a function that accepts a sequence of button events with timestamps and
+returns only the accepted presses.
+
+## Hints
+
+- think about what would happen if one physical press toggled the LED multiple times
+- a simple time window is enough for this lesson
+
+## Why this exercise exists
+
+Embedded work gets easier when you stop assuming hardware is perfect.

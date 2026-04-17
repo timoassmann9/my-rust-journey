@@ -1,8 +1,9 @@
 # Lesson 11: Capstone Project
 
-## Goal
+## Learning goal
 
-Combine the earlier lessons into a project design close to your actual target.
+Pull the earlier lessons into one project design that is close to the ESP32
+system you actually want to build.
 
 ## Project brief
 
@@ -13,19 +14,20 @@ Design a Rust-based ESP32 application that:
 - updates an I2C display
 - exchanges messages with a computer over Wi-Fi
 
+## What a good capstone looks like
+
+A good capstone is not just "code that exists." It should show:
+
+- clear data types
+- clear ownership of responsibilities
+- readable control flow
+- explicit state transitions
+- basic failure handling
+
 ## Suggested architecture
 
-- one module for hardware-facing logic
-- one module for device state
-- one module for protocol messages
-- one module for connection management
-
-## Success criteria
-
-By the end of this lesson, you should be able to explain:
-
-- the core data types
-- the state transitions
-- the message protocol
-- the main loop or task structure
-- the likely failure cases
+- hardware-facing module
+- device-state module
+- protocol module
+- connection-management module
+- top-level app module that coordinates them

@@ -1,28 +1,33 @@
 # Rust for an ESP32 Project
 
-This repository now contains a lesson track aimed at one concrete outcome:
-building an ESP32 project in Rust that uses buttons, LEDs, an I2C screen, and
-Wi-Fi communication with a computer.
+This lesson track is designed around one concrete outcome: building an ESP32
+project in Rust that uses buttons, LEDs, an I2C screen, and Wi-Fi communication
+with your computer.
+
+The repository is now intentionally content-first. It does not contain committed
+Cargo projects for the lessons. Instead, the lesson folders contain the teaching
+material, exercises, solutions, and explanations, and separate setup files tell
+you how to create the matching Cargo projects on your own machine.
 
 ## How to use this track
 
 1. Work through the lessons in order.
-2. Read each `README.md` first.
-3. Solve the exercises in `exercises/` before opening `solutions/`.
-4. Edit the Rust code in `src/main.rs` for each lesson.
+2. Read each lesson `README.md` before writing code.
+3. Create the external Cargo project for that lesson by following:
+   - `lessons/project-setup.md`
+   - `lessons/create-lesson-projects.sh`
+4. Solve the exercises before opening the solution files.
+5. Read the paired explanation files after reviewing the solutions.
 
 ## Important note about this machine
 
-I cannot run `cargo` commands in this environment, so I have structured the
-lessons and workspace without local verification on this machine.
-When you work through them on a machine where `cargo` works, use commands like:
+I cannot run `cargo` commands in this environment. Because of that, this repo
+stores teaching content and project-creation instructions rather than verified
+local Cargo projects.
 
-- `cargo run -p lesson-01-rust-basics`
-- `cargo run -p lesson-07-esp32-peripherals-buttons-leds`
-- `cargo check --workspace`
-- `cargo test --workspace`
-
-Each lesson is its own Cargo package inside the workspace.
+On your own machine, you should create one Cargo project per lesson and use
+`cargo check`, `cargo run`, and `cargo test` there while working through the
+material.
 
 ## Lesson order
 
@@ -42,9 +47,14 @@ Each lesson is its own Cargo package inside the workspace.
 
 You should be able to:
 
-- read and write small to medium Rust programs without copying patterns blindly
-- reason about ownership, borrowing, enums, and error handling
-- model hardware behavior with Rust types and state machines
-- structure an embedded-oriented Rust project
+- write and debug small to medium Rust programs without treating the compiler as an enemy
+- reason about ownership, borrowing, enums, and error handling well enough to make design choices
+- model hardware behavior using types, state machines, and explicit interfaces
+- separate application logic from hardware and transport details
 - design a simple protocol between an ESP32 and a computer
-- sketch and implement the core pieces of your target ESP32 project
+- sketch and then implement the core parts of your target ESP32 project
+
+## Support files
+
+- `project-setup.md`: the readable guide for creating the external Cargo projects
+- `create-lesson-projects.sh`: the same setup commands in shell-script form

@@ -1,24 +1,32 @@
 # Lesson 06: Embedded Rust Foundations
 
-## Goal
+## Learning goal
 
-Understand the mental shift from normal desktop Rust to embedded Rust.
+Understand the mental shift from desktop Rust to embedded Rust without getting
+lost in board-specific APIs too early.
 
-## Why this matters for your project
+## Why this matters for the ESP32 project
 
-An ESP32 is not a laptop. You will care about memory limits, timing, hardware
-pins, and communication protocols. This lesson prepares you for that shift
-without requiring actual board code yet.
+An ESP32 is constrained. You care about:
 
-## Focus topics
+- memory limits
+- hardware pins
+- timing
+- device state
+- communication with the outside world
 
-- `std` versus `no_std` as a concept
-- resource constraints
-- hardware abstraction
+If you jump directly into board code without understanding these constraints,
+the project becomes harder than it needs to be.
+
+## Key concepts
+
+- `std` versus `no_std` as an idea
+- resource awareness
 - polling versus interrupts
-- state machines
+- hardware abstraction
+- explicit state machines
 
 ## Practical rule
 
-Before touching real hardware APIs, learn to model device behavior in plain Rust.
-That reduces confusion dramatically.
+Model the behavior in plain Rust first. That gives you something you can think
+about and test before you add board-specific details.

@@ -1,17 +1,18 @@
 # Lesson 09: Data Modeling and Device Protocols
 
-## Goal
+## Learning goal
 
-Design clean message types before worrying about Wi-Fi transport details.
+Design clear message types before you care about sockets, Wi-Fi libraries, or
+byte-level transport details.
 
-## Why this matters for your project
+## Why this matters for the ESP32 project
 
-If the device and the computer exchange unclear or inconsistent messages, the
-whole project becomes fragile. Protocol design is a software design task first.
+The device and the computer are two parts of one system. If their messages are
+unclear, inconsistent, or loosely defined, debugging becomes much harder.
 
-## Focus topics
+## Key concepts
 
-- request and response shapes
-- enums for message types
-- plain-text versus structured messages
-- validating inputs early
+- enums for message categories
+- readable protocol encoding
+- parsing raw input into typed commands
+- validating messages near the boundary of the system

@@ -1,8 +1,12 @@
 # Exercise 02: Parse Host Command
 
-Design an enum for commands sent from the computer to the ESP32.
+## Objective
 
-Include at least:
+Turn raw host input into a typed command enum that the device can act on safely.
+
+## Task
+
+Design a `HostCommand` enum that includes at least:
 
 - turn LED on
 - turn LED off
@@ -10,9 +14,17 @@ Include at least:
 
 Then write:
 
-`fn parse_host_command(raw: &str) -> Option<HostCommand>`
+```rust
+fn parse_host_command(raw: &str) -> Option<HostCommand>
+```
 
-What this trains:
+## Hints
 
-- turning text into structured control messages
-- rejecting unknown input safely
+- trim the input first
+- return `None` for unknown commands
+- keep the text protocol readable for now
+
+## Why this exercise exists
+
+You want unsafe or malformed input to stop at the system boundary, not leak into
+the rest of the program.

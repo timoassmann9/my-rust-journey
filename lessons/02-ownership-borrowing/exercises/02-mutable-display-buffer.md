@@ -1,23 +1,36 @@
 # Exercise 02: Mutable Display Buffer
 
-Write a function:
+## Objective
 
-`fn write_line(display: &mut String, line: &str)`
+Practice changing owned data in place through a mutable reference.
 
-Requirements:
+## Task
 
-- append `line` to `display`
-- append a newline after the line
-- do not create and return a new `String`
+Write:
 
-Then write another function:
+```rust
+fn write_line(display: &mut String, line: &str)
+fn clear_display(display: &mut String)
+```
 
-`fn clear_display(display: &mut String)`
+Behavior:
 
-It should empty the existing buffer.
+- `write_line` appends the line and then a newline
+- `clear_display` empties the existing buffer
 
-What this trains:
+## Constraints
 
-- mutable borrowing
-- changing an existing owned value in place
-- the difference between ownership and access
+- do not return a new string from either function
+- keep ownership with the caller
+- call both functions from `main` so you can observe the buffer before and after clearing it
+
+## Hints
+
+- `push_str` and `push` are enough
+- `clear()` empties a `String`
+- think of the buffer as a reusable resource, not a throwaway value
+
+## Why this exercise exists
+
+In embedded and systems programming, reusing buffers is common. This is a small
+version of that pattern.

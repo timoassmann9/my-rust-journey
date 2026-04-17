@@ -1,35 +1,78 @@
 # Lesson 01: Rust Basics
 
-## Goal
+## Learning goal
 
-Build a usable foundation in variables, functions, control flow, strings, and
-collections. This is the minimum Rust you need before ownership starts to make
-sense.
+Build a foundation in variables, functions, control flow, strings, and vectors.
+This lesson is deliberately simple because the next lessons depend on you being
+comfortable with plain Rust values before ownership and borrowing are added on top.
 
-## Why this matters for your project
+## Why this matters for the ESP32 project
 
-Even hardware code is still code. Before you can reason about an LED state or a
-message received over Wi-Fi, you need to be comfortable with values, branching,
-loops, and basic standard library types.
+Your final project is hardware-focused, but most of the difficulty is still in
+how you structure data and behavior. Before you model buttons, screens, and
+Wi-Fi messages, you need to be able to:
 
-## Python to Rust
+- store state in variables
+- branch on conditions
+- loop through data
+- build and return strings
+- split logic into functions
 
-- Python variables are flexible and dynamic at runtime. Rust variables have
-  concrete static types.
-- Python strings are easy to pass around. In Rust, strings come in several
-  forms, and you will soon care about who owns them.
-- Python often hides errors until runtime. Rust tries to make mistakes obvious
-  earlier.
+## What to set up in your external Cargo project
 
-## Focus topics
+Create `lesson-01-rust-basics` with `cargo new`, then work mainly in
+`src/main.rs`.
 
-- `let`, `mut`, and basic types
-- `if`, `match`, `loop`, `while`, `for`
-- functions and return values
-- `String` and `Vec`
-- simple parsing and formatting
+## Key concepts
 
-## Study approach
+- `let` creates a variable
+- `mut` allows reassignment
+- function parameters and return types are explicit
+- `if` is an expression, not only a statement
+- `Vec<T>` stores a growable list of values
+- `String` is owned text data you can build and modify
 
-Read the starter code in `src/main.rs`, then solve the exercises. Do not
-optimize for "shortest code"; optimize for readable code that you understand.
+## Python to Rust comparison
+
+- Python lets you change value types freely at runtime. Rust does not.
+- Python often encourages "try it and see." Rust asks you to be explicit earlier.
+- Python lists and strings feel effortless. Rust gives you more control, but you
+  must understand what type you are working with.
+
+## Worked example
+
+```rust
+fn parse_button_value(raw: &str) -> i32 {
+    raw.trim().parse::<i32>().unwrap_or(-1)
+}
+
+fn led_label(is_on: bool) -> &'static str {
+    if is_on {
+        "LED is ON"
+    } else {
+        "LED is OFF"
+    }
+}
+```
+
+What to notice:
+
+- `raw: &str` means the function reads borrowed text
+- `parse::<i32>()` tries to turn text into a number
+- `unwrap_or(-1)` provides a fallback value
+- the `if` expression returns one of two string slices
+
+## Common mistakes to watch for
+
+- forgetting `mut` when you need to change a variable
+- mixing up `String` and `&str`
+- trying to return different types from different branches
+- writing everything inside `main` instead of using helper functions
+
+## Study sequence
+
+1. Recreate the worked example in your external lesson project.
+2. Add a few extra inputs and print the results.
+3. Solve exercise 1 before exercise 2.
+4. After solving, compare your answer with the solution file.
+5. Then read the explanation file and rewrite your code if you learned a cleaner approach.

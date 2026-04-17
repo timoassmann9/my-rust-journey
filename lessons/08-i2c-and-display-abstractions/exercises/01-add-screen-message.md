@@ -1,13 +1,23 @@
 # Exercise 01: Add Screen Message
 
-Extend `show_status` so it also prints a third line for the button state.
+## Objective
 
-Requirements:
+Pass all state needed for rendering through the function interface.
 
-- use a function parameter instead of a global variable
-- show either `button: pressed` or `button: released`
+## Task
 
-What this trains:
+Extend `show_status` so it also writes a third line for button state:
 
-- passing state through interfaces
-- keeping rendering logic explicit
+- `button: pressed`
+- `button: released`
+
+## Constraints
+
+- use a function parameter, not a global
+- clear the display before writing the lines
+- keep the function responsible for formatting, not hardware details
+
+## Why this exercise exists
+
+This teaches a habit that matters everywhere in Rust: make the data dependency
+explicit in the function signature.

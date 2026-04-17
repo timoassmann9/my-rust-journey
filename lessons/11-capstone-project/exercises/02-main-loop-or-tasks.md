@@ -1,20 +1,23 @@
 # Exercise 02: Main Loop or Tasks
 
-Write a first draft of the control flow for the project.
+## Objective
 
-Choose one of these styles:
+Describe how the whole system runs over time.
+
+## Task
+
+Write a draft of the control flow using either:
 
 - one polling loop
-- multiple conceptual tasks
+- several conceptual tasks
 
 Your draft should explain:
 
 - where button input is read
-- where LED and display updates happen
-- where Wi-Fi messages are sent and received
-- how errors change system behavior
+- where outputs are applied
+- where messages are sent and received
+- what happens on errors
 
-What this trains:
+## Why this exercise exists
 
-- system integration
-- moving from isolated functions to a coherent application
+This is where isolated lesson skills become one coherent application design.
