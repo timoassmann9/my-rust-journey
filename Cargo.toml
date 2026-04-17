@@ -1,0 +1,15 @@
+[workspace]
+members = [
+    "lessons/01-rust-basics",
+    "lessons/02-ownership-borrowing",
+    "lessons/03-structs-enums-patterns",
+    "lessons/04-error-handling-modules-crates",
+    "lessons/05-testing-debugging-and-tooling-concepts",
+    "lessons/06-embedded-rust-foundations",
+    "lessons/07-esp32-peripherals-buttons-leds",
+    "lessons/08-i2c-and-display-abstractions",
+    "lessons/09-data-modeling-and-device-protocols",
+    "lessons/10-wifi-and-pc-communication",
+    "lessons/11-capstone-project",
+]
+resolver = "2"

@@ -1,0 +1,6 @@
+[package]
+name = "lesson-03-structs-enums-patterns"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
