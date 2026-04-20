@@ -1,0 +1,1 @@
+C:\Users\TAßmann\Documents\rust\my-rust-journey\lessons\lesson-01-rust-basics\target\debug\lesson-01-rust-basics.exe: C:\Users\TAßmann\Documents\rust\my-rust-journey\lessons\lesson-01-rust-basics\src\main.rs

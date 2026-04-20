@@ -1,3 +1,42 @@
+use std::{convert, ptr::read, vec};
+
+fn parse_button_value(raw: &str) -> i32 {
+    raw.trim().parse::<i32>().unwrap_or(-1)
+}
+
+fn led_label(is_on: bool) -> &'static str {
+    if is_on { "LED is ON" }
+    else { "LED is OFF" }
+}
+
+fn temperature_summary(readings: Vec<i32>) -> String {
+    if readings.is_empty() { String::from("no readings") }
+    else {
+        let mut min = readings[0];
+        let mut max = readings[0];
+        let mut sum = 0;
+
+        for value in readings {
+            if value < min {
+                min = value;
+            }
+            if value > max {
+                max = value;
+            }
+            sum += value;
+        }
+
+        let avg = sum / readings.len() as i32;
+    }
+}
+
 fn main() {
-    println!("Hello, world!");
+    let button = "1";
+    let button_int = parse_button_value(button);
+    println!("button: {button_int}");
+
+    let led_on = true;
+    println!("{}", led_label(led_on))
+
+
 }
