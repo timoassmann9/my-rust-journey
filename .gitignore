@@ -1,0 +1,11 @@
+lessons/lesson-01-rust-basics/target
+lessons/lesson-02-ownership-borrowing/target
+lessons/lesson-03-structs-enums-patterns/target
+lessons/lesson-04-error-handling-modules-crates/target
+lessons/lesson-05-testing-debugging-and-tooling-concepts/target
+lessons/lesson-06-embedded-rust-foundations/target
+lessons/lesson-07-esp32-peripherals-buttons-leds/target
+lessons/lesson-08-i2c-and-display-abstractions/target
+lessons/lesson-09-data-modeling-and-device-protocols/target
+lessons/lesson-10-wifi-and-pc-communication/target
+lessons/lesson-11-capstone-project/target

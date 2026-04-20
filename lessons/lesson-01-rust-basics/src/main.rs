@@ -1,5 +1,3 @@
-use std::{convert, ptr::read, vec};
-
 fn parse_button_value(raw: &str) -> i32 {
     raw.trim().parse::<i32>().unwrap_or(-1)
 }
@@ -15,6 +13,7 @@ fn temperature_summary(readings: Vec<i32>) -> String {
         let mut min = readings[0];
         let mut max = readings[0];
         let mut sum = 0;
+        let len = readings.len() as i32;
 
         for value in readings {
             if value < min {
@@ -26,7 +25,8 @@ fn temperature_summary(readings: Vec<i32>) -> String {
             sum += value;
         }
 
-        let avg = sum / readings.len() as i32;
+        let avg = sum / len;
+        format!("min={min}, max={max}, avg={avg}")
     }
 }
 
@@ -36,7 +36,17 @@ fn main() {
     println!("button: {button_int}");
 
     let led_on = true;
-    println!("{}", led_label(led_on))
+    println!("{}", led_label(led_on));
 
+    let readings1 = vec![3, 7, 22, 92, 4];
+    let readings2 = vec![69, 420, 892, 4877, 9, 0];
+    let empty: Vec<i32> = vec![];
 
+    let readings1_result = temperature_summary(readings1);
+    let readings2_result = temperature_summary(readings2);
+    let empty = temperature_summary(empty);
+
+    println!("First: {readings1_result}");
+    println!("Second: {readings2_result}");
+    println!("Third: {empty}");
 }
