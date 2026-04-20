@@ -13,19 +13,18 @@ fn temperature_summary(readings: Vec<i32>) -> String {
         let mut min = readings[0];
         let mut max = readings[0];
         let mut sum = 0;
-        let len = readings.len() as i32;
 
-        for value in readings {
-            if value < min {
-                min = value;
+        for value in &readings {
+            if *value < min {
+                min = *value;
             }
-            if value > max {
-                max = value;
+            if *value > max {
+                max = *value;
             }
             sum += value;
         }
 
-        let avg = sum / len;
+        let avg = sum / readings.len() as i32;
         format!("min={min}, max={max}, avg={avg}")
     }
 }
