@@ -23,6 +23,14 @@ fn make_report(device_name: &str, readings: &[i32]) -> String {
     format!("device={device_name}, count={count}, high={high}")
 }
 
+fn write_line(display: &mut String, line: &str) {
+    display.push_str(format!("{line}\n").as_str());
+}
+
+fn clear_display(display: &mut String) {
+    display.clear();
+}
+
 fn main() {
     let mut led_status = String::from("Status von LED1: ");
     append_status(&mut led_status, "ON");
@@ -35,5 +43,11 @@ fn main() {
     let readings = vec![1, 3, 69, 420, 44, 73];
     println!("Report: {}\n", make_report("esp32", &readings));
 
-
+    let mut display_buf = String::from("hello!\n");
+    println!("{display_buf}");
+    write_line(&mut display_buf, "this is a new line");
+    println!("{display_buf}");
+    clear_display(&mut display_buf);
+    println!("{display_buf}");
+    println!("{}", display_buf.is_empty() == true);
 }
