@@ -25,6 +25,12 @@ fn make_report(device_name: &str, readings: &[i32]) -> String {
 
 fn write_line(display: &mut String, line: &str) {
     display.push_str(format!("{line}\n").as_str());
+
+    /*
+    Alternativ:
+    display.push_str(line);
+    display.push('\n');
+     */
 }
 
 fn clear_display(display: &mut String) {
