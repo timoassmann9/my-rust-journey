@@ -1,5 +1,3 @@
-use std::result;
-
 fn parse_button_value(raw: &str) -> i32 {
     raw.trim().parse::<i32>().unwrap_or(-1)
 }
@@ -31,6 +29,7 @@ fn temperature_summary(readings: Vec<i32>) -> String {
     }
 }
 
+// Careful: this function takes ownership of `states`
 fn blink_pattern(states: Vec<bool>) -> String {
     let mut result = String::new();
     for state in states {
@@ -73,4 +72,9 @@ fn main() {
     println!("First: {readings1_result}");
     println!("Second: {readings2_result}");
     println!("Third: {empty}");
+
+    let states1 = vec![true, false, true, true, false, false, true, true];
+    let states2 = vec![false, false, true, true, false, true];
+    println!("States: {}", blink_pattern(states1));
+    println!("Count ON: {}", count_on(&states2));
 }
