@@ -1,3 +1,5 @@
+use std::result;
+
 fn parse_button_value(raw: &str) -> i32 {
     raw.trim().parse::<i32>().unwrap_or(-1)
 }
@@ -27,6 +29,29 @@ fn temperature_summary(readings: Vec<i32>) -> String {
         let avg = sum / readings.len() as i32;
         format!("min={min}, max={max}, avg={avg}")
     }
+}
+
+fn blink_pattern(states: Vec<bool>) -> String {
+    let mut result = String::new();
+    for state in states {
+        if state {
+            result.push('*');
+        }
+        else {
+            result.push('.');
+        }
+    }
+    
+    result
+}
+
+fn count_on(states: &[bool]) -> usize {
+    let mut count = 0;
+    for state in states {
+        if *state { count += 1; }
+    }
+
+    count
 }
 
 fn main() {
